@@ -30,24 +30,7 @@ if len(frame_files) > 0:
     for file in frame_files:
         img_path = os.path.join(frame_folder, file)
         img = Image.open(img_path).convert("RGBA")
-        # Adiciona data/hora no frame para garantir mudança
-        draw = ImageDraw.Draw(img)
-        try:
-            font = ImageFont.truetype("arial.ttf", 14)
-        except:
-            font = ImageFont.load_default()
-        now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        # Centralizar o texto
-        # Usar textbbox para obter tamanho do texto (compatível com Pillow >=10)
-        bbox = draw.textbbox((0, 0), now, font=font)
-        text_w = bbox[2] - bbox[0]
-        text_h = bbox[3] - bbox[1]
-        img_w, img_h = img.size
-        x = (img_w - text_w) // 2
-        y = (img_h - text_h) // 2
-        # Fundo branco para contraste
-        draw.rectangle([x-2, y-2, x+text_w+2, y+text_h+2], fill=(255,255,255,200))
-        draw.text((x, y), now, fill=(255,0,0,255), font=font)
+        # (Removido: não adicionar data/hora nos frames)
         images.append(img)
         durations.append(100)  # 100ms por frame para evitar piscar
     
