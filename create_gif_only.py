@@ -38,7 +38,10 @@ if len(frame_files) > 0:
             font = ImageFont.load_default()
         now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         # Centralizar o texto
-        text_w, text_h = draw.textsize(now, font=font)
+        # Usar textbbox para obter tamanho do texto (compatível com Pillow >=10)
+        bbox = draw.textbbox((0, 0), now, font=font)
+        text_w = bbox[2] - bbox[0]
+        text_h = bbox[3] - bbox[1]
         img_w, img_h = img.size
         x = (img_w - text_w) // 2
         y = (img_h - text_h) // 2
