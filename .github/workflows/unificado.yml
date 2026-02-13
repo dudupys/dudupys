@@ -1,0 +1,51 @@
+name: Atualização Unificada
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-all:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar dependências
+        run: |
+          sudo apt update && sudo apt install -y ffmpeg
+          python -m pip install --upgrade pip
+          pip install pillow
+          pip install git+https://github.com/x0rzavi/github-readme-terminal.git@main
+
+      - name: Gerar GIF e atualizar README
+        run: |
+          python main.py
+          python create_gif_only.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          IMGBB_API_KEY: ${{ secrets.IMGBB_API_KEY }}
+          GIFOS_GENERAL_FPS: 13
+          GIFOS_GENERAL_LOOP_COUNT: 4
+          GIFOS_GENERAL_COLOR_SCHEME: "everblush"
+
+      - name: Commit e push das alterações
+        run: |
+          git config --global user.name "dudupys"
+          git config --global user.email "eduardo.vinicios.xt1@gmail.com"
+          git add README.md output.gif
+          git commit -m "Atualização automática unificada em $(date) [skip ci]" || echo "Nada para commitar"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
