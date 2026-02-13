@@ -1,5 +1,3 @@
-![Hello](docs/hello.svg)
-
 <div align="justify">
 <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./output.gif">
@@ -7,7 +5,7 @@
     <img alt="GIFOS" src="output.gif">
 </picture>
 
-<sub><i>Generated automatically using [dudupys/github-readme-terminal](https://github.com/dudupys/github-readme-terminal) on Thu Feb 12 12:01:54 PM -03 2026</i></sub>
+<sub><i>Generated automatically using [dudupys/github-readme-terminal](https://github.com/dudupys/github-readme-terminal) on Fri Feb 13 01:25:20 PM -03 2026</i></sub>
 
 <!-- <details>
 <summary>More details</summary>
