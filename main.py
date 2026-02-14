@@ -1,7 +1,9 @@
 from datetime import datetime
+import os
 
 import gifos
 from zoneinfo import ZoneInfo
+from github_stats import fetch_github_stats
 
 FONT_FILE_LOGO = "./fonts/vtks-blocketo.regular.ttf"
 # FONT_FILE_BITMAP = "./fonts/ter-u14n.pil"
@@ -100,7 +102,7 @@ def main():
     t.delete_row(7, prompt_col)  # simulate syntax highlighting
     t.gen_text("\x1b[92mclear\x1b[0m", 7, count=3, contin=True)
 
-    # Usar dados mock direto, sem tentar chamar a API
+    # Tentar obter dados reais da API do GitHub
     git_user_details = None
     
     try:
@@ -110,14 +112,26 @@ def main():
     
     t.clear_frame()
     
+    # Tentar obter dados reais do GitHub usando token
+    github_token = os.getenv('GITHUB_TOKEN')
+    if github_token:
+        try:
+            print("Buscando dados reais do GitHub...")
+            git_user_details = fetch_github_stats(github_token, "dudupys")
+            print("Dados do GitHub obtidos com sucesso!")
+        except Exception as e:
+            print(f"Erro ao buscar dados do GitHub: {e}")
+            print("Usando dados mock como fallback...")
+    
     # Se não conseguir obter dados do GitHub, usa dados mock com valores reais
     if git_user_details is None:
+        print("Usando dados mock...")
         class MockGitHubDetails:
             def __init__(self):
-                # Dados reais da API do GitHub
+                # Dados mock para fallback
                 self.user_rank = type('obj', (object,), {'level': 'Active Developer'})()
                 self.total_stargazers = 11  # followers
-                self.total_commits_last_year = 156  # estimativa baseada em 10 repos
+                self.total_commits_last_year = 156  # estimativa
                 self.total_pull_requests_made = 23  # estimativa
                 self.pull_requests_merge_percentage = 85  # estimativa
                 self.total_repo_contributions = 10  # public_repos

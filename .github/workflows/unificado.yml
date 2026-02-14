@@ -26,7 +26,7 @@ jobs:
         run: |
           sudo apt update && sudo apt install -y ffmpeg
           python -m pip install --upgrade pip
-          pip install pillow
+          pip install pillow requests
           pip install git+https://github.com/x0rzavi/github-readme-terminal.git@main
 
       - name: Gerar GIF e atualizar README
@@ -34,7 +34,7 @@ jobs:
           python main.py
           python create_gif_only.py
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GIF_GENERATION_TOKEN }}
           IMGBB_API_KEY: ${{ secrets.IMGBB_API_KEY }}
           GIFOS_GENERAL_FPS: 13
           GIFOS_GENERAL_LOOP_COUNT: 4
@@ -48,4 +48,4 @@ jobs:
           git commit -m "Atualização automática unificada em $(date) [skip ci]" || echo "Nada para commitar"
           git push
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GIF_GENERATION_TOKEN }}
