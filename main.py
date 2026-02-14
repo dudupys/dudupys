@@ -118,11 +118,19 @@ def main():
     if github_token:
         try:
             print("Buscando dados reais do GitHub...")
+            print(f"Token encontrado: {github_token[:10]}...{github_token[-4:]}")
             git_user_details = fetch_github_stats(github_token, "dudupys")
-            print("Dados do GitHub obtidos com sucesso!")
+            if git_user_details:
+                print("Dados do GitHub obtidos com sucesso!")
+            else:
+                print("Falha ao obter dados do GitHub - usando fallback")
+                git_user_details = None
         except Exception as e:
             print(f"Erro ao buscar dados do GitHub: {e}")
             print("Usando dados mock como fallback...")
+            git_user_details = None
+    else:
+        print("Token GitHub não encontrado - usando dados mock")
     
     # Se não conseguir obter dados do GitHub, usa dados mock com valores reais
     if git_user_details is None:
