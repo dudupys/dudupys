@@ -13,6 +13,7 @@ FONT_FILE_MONA = "./fonts/Inversionz.otf"
 
 
 def main():
+    import os
     t = gifos.Terminal(750, 500, 15, 15, FONT_FILE_BITMAP, 15)
     
     # FORÇAR cursor desligado permanentemente
