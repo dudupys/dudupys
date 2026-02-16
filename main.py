@@ -4,6 +4,8 @@ import os
 import gifos
 from zoneinfo import ZoneInfo
 from github_stats import fetch_github_stats
+from about_me_generator import generate_about_me_section
+from biblical_verse_generator import generate_biblical_verse_section
 
 FONT_FILE_LOGO = "./fonts/vtks-blocketo.regular.ttf"
 # FONT_FILE_BITMAP = "./fonts/ter-u14n.pil"
@@ -252,7 +254,7 @@ def main():
             img_path = os.path.join(frame_folder, file)
             img = Image.open(img_path)
             images.append(img)
-            durations.append(100)  # 100ms por frame para evitar piscar
+            durations.append(150)  # 150ms por frame para reduzir piscar
         
         # Adicionar delay extra nos últimos frames para melhor visualização
         if len(durations) > 0:
@@ -274,12 +276,41 @@ def main():
     else:
         print("Nenhum frame encontrado para criar GIF")
     # image = gifos.utils.upload_imgbb("output.gif", 129600)  # 1.5 days expiration
-    readme_file_content = rf"""<div align="justify">
+    
+    # Gerar novas seções
+    about_me_section = generate_about_me_section()
+    biblical_verse_section = generate_biblical_verse_section()
+    
+    # GitHub Streak URL
+    github_streak_url = "https://streak-stats.demolab.com?user=dudupys"
+    
+    readme_file_content = f"""<div align="justify">
+
+{about_me_section}
+
+---
+
 <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./output.gif">
     <source media="(prefers-color-scheme: light)" srcset="./output.gif">
     <img alt="GIFOS" src="output.gif">
 </picture>
+
+---
+
+## 📊 GitHub Streak
+
+<picture>
+    <source media="(prefers-color-scheme: dark)" srcset="{github_streak_url}&theme=dark&hide_border=true">
+    <source media="(prefers-color-scheme: light)" srcset="{github_streak_url}&theme=light&hide_border=true">
+    <img alt="GitHub Streak" src="{github_streak_url}">
+</picture>
+
+---
+
+{biblical_verse_section}
+
+---
 
 <sub><i>Generated automatically using [dudupys/github-readme-terminal](https://github.com/dudupys/github-readme-terminal) on {time_now}</i></sub>
 
@@ -290,7 +321,7 @@ def main():
 </div>
 
 <!-- Image deletion URL: NONE -->"""
-    with open("README.md", "w") as f:
+    with open("README.md", "w", encoding='utf-8') as f:
         f.write(readme_file_content)
         print("INFO: README.md file generated")
 
