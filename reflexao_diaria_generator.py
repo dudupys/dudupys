@@ -73,19 +73,19 @@ def generate_reflexao_diaria_section():
     reflexao = get_daily_reflexao()
     
     if not reflexao:
-        return "```bash\n$ echo \"Reflexão do dia\"\n*Reflexão não disponível no momento.*\n```"
+        return "```bash\n$ echo \"Daily Reflection\"\n*Reflection not available at the moment.*\n```"
     
     # Formata no estilo terminal CLI como o About Me
     if reflexao['autor']:
         reflexao_content = f"""```bash
-$ echo "Reflexão do dia"
+$ echo "Daily Reflection"
 {reflexao['texto']}
 
 — {reflexao['autor']}
 ```"""
     else:
         reflexao_content = f"""```bash
-$ echo "Reflexão do dia"
+$ echo "Daily Reflection"
 {reflexao['texto']}
 ```"""
     

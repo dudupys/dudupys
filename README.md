@@ -31,15 +31,16 @@ $ echo "About me"
 
 ---
 
-📖 Versículo do dia
+```bash
+$ echo "Daily Reflection"
+Anyone can write code that a computer can understand. Good programmers write code that humans understand.
 
-"Tu conservarás em paz aquele cuja mente está firme em ti; porque ele confia em ti."
-
-— Isaías 26:3
+— Martin Fowler
+```
 
 ---
 
-<sub><i>Generated automatically using [dudupys/github-readme-terminal](https://github.com/dudupys/github-readme-terminal) on Mon Feb 16 08:39:54 PM -03 2026</i></sub>
+<sub><i>Generated automatically using [dudupys/github-readme-terminal](https://github.com/dudupys/github-readme-terminal) on Mon Feb 16 09:50:54 PM -03 2026</i></sub>
 
 <!-- <details>
 <summary>More details</summary>

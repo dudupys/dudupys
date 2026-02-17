@@ -37,6 +37,9 @@ def main():
     # FORÇAR cursor desligado
     t.toggle_show_cursor(False)
     year_now = datetime.now(ZoneInfo("America/Sao_Paulo")).strftime("%Y")
+    time_now = datetime.now(ZoneInfo("America/Sao_Paulo")).strftime(
+        "%a %b %d %I:%M:%S %p %Z %Y"
+    )
     t.gen_text("GIF_OS Modular BIOS v1.0.11", 1)
     t.gen_text(f"Copyright (C) {year_now}, \x1b[31mEduardo Vinícios Softwares Inc.\x1b[0m", 2)
     t.gen_text("\x1b[94mGitHub Profile ReadMe Terminal, Rev 1011\x1b[0m", 4)
@@ -108,14 +111,12 @@ def main():
     # Tentar obter dados reais da API do GitHub
     git_user_details = None
     
-    try:
-        user_age = gifos.utils.calc_age(3, 12, 2007)
-    except:
-        user_age = type('obj', (object,), {'years': 18, 'months': 2, 'days': 9})()
+    # Fixar idade correta para eliminar piscar (18 anos, 2 meses, 13 dias)
+    user_age = type('obj', (object,), {'years': 18, 'months': 2, 'days': 13})()
     
     t.clear_frame()
     
-    # Tentar obter dados reais do GitHub usando token
+    # Restaurar busca real do GitHub
     github_token = os.getenv('GITHUB_TOKEN')
     if github_token:
         try:
@@ -134,18 +135,17 @@ def main():
     else:
         print("Token GitHub não encontrado - usando dados mock")
     
-    # Se não conseguir obter dados do GitHub, usa dados mock com valores reais
+    # Se não conseguir obter dados do GitHub, usa dados mock
     if git_user_details is None:
-        print("Usando dados mock...")
+        print("Usando dados mock como fallback...")
         class MockGitHubDetails:
             def __init__(self):
-                # Dados mock para fallback
                 self.user_rank = type('obj', (object,), {'level': 'Active Developer'})()
-                self.total_stargazers = 11  # followers
-                self.total_commits_last_year = 156  # estimativa
-                self.total_pull_requests_made = 23  # estimativa
-                self.pull_requests_merge_percentage = 85  # estimativa
-                self.total_repo_contributions = 10  # public_repos
+                self.total_stargazers = 11
+                self.total_commits_last_year = 358  # Contributions reais
+                self.total_pull_requests_made = 23
+                self.pull_requests_merge_percentage = 85
+                self.total_repo_contributions = 10
                 self.languages_sorted = [('Python', 35), ('JavaScript', 25), ('HTML', 20), ('CSS', 15), ('TypeScript', 5)]
         git_user_details = MockGitHubDetails()
     
@@ -154,8 +154,8 @@ def main():
     \x1b[30;101mdudupys@GitHub\x1b[0m
     --------------
     \x1b[96mOS:     \x1b[93mWindows 11, Android 14\x1b[0m
-    \x1b[96mHost:   \x1b[93mInstituto Federal do Rio Grande do Norte \x1b[94m#IFRN\x1b[0m
-    \x1b[96mKernel: \x1b[93mInformática para Internet \x1b[94m#IFRN\x1b[0m
+    \x1b[96mSchool: \x1b[93mInstituto Federal do Rio Grande do Norte \x1b[94m#IFRN\x1b[0m
+    \x1b[96mCourse: \x1b[93mInformática para Internet \x1b[94m#IFRN\x1b[0m
     \x1b[96mUptime: \x1b[93m{user_age.years} years, {user_age.months} months, {user_age.days} days\x1b[0m
     \x1b[96mIDE:    \x1b[93mVSCode, Cursor, Windsurf\x1b[0m
     
@@ -168,7 +168,7 @@ def main():
     --------------
     \x1b[96mUser Rating: \x1b[93m{git_user_details.user_rank.level}\x1b[0m
     \x1b[96mTotal Stars Earned: \x1b[93m{git_user_details.total_stargazers}\x1b[0m
-    \x1b[96mTotal Commits ({int(year_now) - 1}): \x1b[93m{git_user_details.total_commits_last_year}\x1b[0m
+    \x1b[96mTotal Commits: \x1b[93m{git_user_details.total_commits_last_year}\x1b[0m
     \x1b[96mTotal PRs: \x1b[93m{git_user_details.total_pull_requests_made}\x1b[0m
     \x1b[96mMerged PR %: \x1b[93m{git_user_details.pull_requests_merge_percentage}\x1b[0m
     \x1b[96mTotal Contributions: \x1b[93m{git_user_details.total_repo_contributions}\x1b[0m
@@ -244,17 +244,17 @@ def main():
     
     print(f"Encontrados {len(frame_files)} frames")
     
-    # Criar GIF com Pillow
+    # Criar GIF com método simples e funcionando
     if len(frame_files) > 0:
-        print("Criando GIF com Pillow...")
+        print("Criando GIF com método simples...")
         images = []
         durations = []
         
         for file in frame_files:
             img_path = os.path.join(frame_folder, file)
-            img = Image.open(img_path)
+            img = Image.open(img_path).convert("RGBA")
             images.append(img)
-            durations.append(150)  # 150ms por frame para reduzir piscar
+            durations.append(100)  # 100ms por frame
         
         # Adicionar delay extra nos últimos frames para melhor visualização
         if len(durations) > 0:
@@ -264,22 +264,27 @@ def main():
         if len(durations) > 2:
             durations[-3] = 600  # 600ms no antepenúltimo frame
         
-        # Salvar GIF
+        # Salvar GIF de forma simples
         images[0].save(
             "output.gif",
             save_all=True,
             append_images=images[1:],
-            duration=durations,  # Lista com duração individual por frame
+            duration=durations,
             loop=0
         )
-        print("GIF criado com sucesso!")
+        print(f"GIF criado com sucesso! ({len(frame_files)} frames, duração total: {sum(durations)/1000:.1f}s)")
     else:
         print("Nenhum frame encontrado para criar GIF")
     # image = gifos.utils.upload_imgbb("output.gif", 129600)  # 1.5 days expiration
     
-    # Gerar novas seções
+    # Gerar seção about me e fixar reflexão para eliminar piscar
     about_me_section = generate_about_me_section()
-    reflexao_diaria_section = generate_reflexao_diaria_section()
+    reflexao_diaria_section = """```bash
+$ echo "Daily Reflection"
+Anyone can write code that a computer can understand. Good programmers write code that humans understand.
+
+— Martin Fowler
+```"""
     
     # GitHub Streak URL
     github_streak_url = "https://streak-stats.demolab.com?user=dudupys"
