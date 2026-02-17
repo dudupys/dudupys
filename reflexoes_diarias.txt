@@ -1,0 +1,44 @@
+Anyone can write code that a computer can understand. Good programmers write code that humans understand.|Martin Fowler
+First, solve the problem. Then, write the code.|John Johnson
+The best way to predict the future is to implement it.|David Heinemeier Hansson
+I don't fear computers. I fear the lack of them.|Isaac Asimov
+Computing is evolving faster than anything else in human history.|Ray Kurzweil
+Software is like humor: when you have to explain it, it's bad.|Unknown
+Code is like humor. When you have to explain it, it's not good.|Cory House
+Software complexity is an enemy that has defeated most programmers.|Michele Lanza
+Premature optimization is the root of all evil.|Donald Knuth
+There are only two hard things in computer science: cache invalidation and naming things.|Phil Karlton
+Programming isn't about what you know; it's about how you think.|Unknown
+The art of programming is the art of organizing control over complex work.|Edsger W. Dijkstra
+If debugging is the process of removing bugs, then programming must be the process of putting them in.|Edsger W. Dijkstra
+Show me your code and conceal your data structures, and I shall continue to be mystified. Show me your data structures, and I won't need your code.|David L. Parnas
+The question of whether computers can think is like the question of whether submarines can swim.|Edsger W. Dijkstra
+In computer science, we don't understand software in the same way we understand hardware.|Donald Knuth
+Software is eating the world.|Marc Andreessen
+Everyone wants AI to be a servant, but nobody wants to clean its room.|Alan Kay
+The best way to predict the future is to invent it.|Alan Kay
+Technology is anything that wasn't around when you were born.|Alan Kay
+The point about AI is that it forces us to think about what it means to be human.|Marvin Minsky
+A machine can do the work of fifty ordinary men. No machine can do the work of one extraordinary man.|Elbert Hubbard
+Automation doesn't replace work. It automates the part of work that can be automated.|Unknown
+Code never lies, comments sometimes do.|Bill Gates
+Measuring programming progress by lines of code is like measuring aircraft building progress by weight.|Bill Gates
+The Internet is the first thing that humanity has built that humanity doesn't understand.|Unknown
+We are connected, but we are alone.|Sherry Turkle
+Technology is a useful servant but a dangerous master.|Christian Lous Lange
+Innovation distinguishes between a leader and a follower.|Steve Jobs
+Technology is nothing more than what makes our life easy when it works and complicated when it doesn't.|Unknown
+The future is already here, it's just not evenly distributed.|William Gibson
+Information is not knowledge.|Albert Einstein
+The only real mistake is the one from which we learn nothing.|Henry Ford
+Simplicity is the ultimate sophistication.|Leonardo da Vinci
+Technology advances because we dream.|Unknown
+Every problem solved by technology creates ten new problems.|Unknown
+We are living in the information age, but we are dying of wisdom starvation.|Naveen Jain
+Technology is an extension of ourselves.|Marshall McLuhan
+Digital is the new analog.|Unknown
+Programming is the art of telling a computer what to do.|Unknown
+Code is the literature of the future.|Unknown
+Technology makes us more human, not less.|Unknown
+Innovation is the call to change the world.|Unknown
+The future belongs to those who believe in the beauty of their dreams.|Eleanor Roosevelt

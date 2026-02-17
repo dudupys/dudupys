@@ -5,7 +5,7 @@ import gifos
 from zoneinfo import ZoneInfo
 from github_stats import fetch_github_stats
 from about_me_generator import generate_about_me_section
-from biblical_verse_generator import generate_biblical_verse_section
+from reflexao_diaria_generator import generate_reflexao_diaria_section
 
 FONT_FILE_LOGO = "./fonts/vtks-blocketo.regular.ttf"
 # FONT_FILE_BITMAP = "./fonts/ter-u14n.pil"
@@ -279,7 +279,7 @@ def main():
     
     # Gerar novas seções
     about_me_section = generate_about_me_section()
-    biblical_verse_section = generate_biblical_verse_section()
+    reflexao_diaria_section = generate_reflexao_diaria_section()
     
     # GitHub Streak URL
     github_streak_url = "https://streak-stats.demolab.com?user=dudupys"
@@ -308,7 +308,7 @@ def main():
 
 ---
 
-{biblical_verse_section}
+{reflexao_diaria_section}
 
 ---
 
