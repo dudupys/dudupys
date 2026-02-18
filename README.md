@@ -33,14 +33,14 @@ $ echo "About me"
 
 ```bash
 $ echo "Daily Reflection"
-Anyone can write code that a computer can understand. Good programmers write code that humans understand.
+Software is like humor: when you have to explain it, it's bad.
 
-— Martin Fowler
+— Unknown
 ```
 
 ---
 
-<sub><i>Generated automatically using [dudupys/github-readme-terminal](https://github.com/dudupys/github-readme-terminal) on Mon Feb 16 09:50:54 PM -03 2026</i></sub>
+<sub><i>Generated automatically using [dudupys/github-readme-terminal](https://github.com/dudupys/github-readme-terminal) on Wed Feb 18 08:37:41 PM -03 2026</i></sub>
 
 <!-- <details>
 <summary>More details</summary>

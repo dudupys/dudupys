@@ -111,8 +111,11 @@ def main():
     # Tentar obter dados reais da API do GitHub
     git_user_details = None
     
-    # Fixar idade correta para eliminar piscar (18 anos, 2 meses, 13 dias)
-    user_age = type('obj', (object,), {'years': 18, 'months': 2, 'days': 13})()
+    # Restaurar cálculo dinâmico da idade
+    try:
+        user_age = gifos.utils.calc_age(3, 12, 2007)
+    except:
+        user_age = type('obj', (object,), {'years': 18, 'months': 2, 'days': 13})()
     
     t.clear_frame()
     
@@ -277,14 +280,9 @@ def main():
         print("Nenhum frame encontrado para criar GIF")
     # image = gifos.utils.upload_imgbb("output.gif", 129600)  # 1.5 days expiration
     
-    # Gerar seção about me e fixar reflexão para eliminar piscar
+    # Gerar seções dinâmicas
     about_me_section = generate_about_me_section()
-    reflexao_diaria_section = """```bash
-$ echo "Daily Reflection"
-Anyone can write code that a computer can understand. Good programmers write code that humans understand.
-
-— Martin Fowler
-```"""
+    reflexao_diaria_section = generate_reflexao_diaria_section()
     
     # GitHub Streak URL
     github_streak_url = "https://streak-stats.demolab.com?user=dudupys"
