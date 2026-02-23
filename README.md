@@ -33,14 +33,14 @@ $ echo "About me"
 
 ```bash
 $ echo "Daily Reflection"
-There are only two hard things in computer science: cache invalidation and naming things.
+Programming isn't about what you know; it's about how you think.
 
-— Phil Karlton
+— Unknown
 ```
 
 ---
 
-<sub><i>Generated automatically using [dudupys/github-readme-terminal](https://github.com/dudupys/github-readme-terminal) on Sun Feb 22 08:58:46 PM -03 2026</i></sub>
+<sub><i>Generated automatically using [dudupys/github-readme-terminal](https://github.com/dudupys/github-readme-terminal) on Sun Feb 22 11:30:02 PM -03 2026</i></sub>
 
 <!-- <details>
 <summary>More details</summary>
