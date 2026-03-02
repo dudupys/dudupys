@@ -33,14 +33,14 @@ $ echo "About me"
 
 ```bash
 $ echo "Daily Reflection"
-Software is eating the world.
+Everyone wants AI to be a servant, but nobody wants to clean its room.
 
-— Marc Andreessen
+— Alan Kay
 ```
 
 ---
 
-<sub><i>Generated automatically using [dudupys/github-readme-terminal](https://github.com/dudupys/github-readme-terminal) on Sun Mar 01 08:51:06 PM -03 2026</i></sub>
+<sub><i>Generated automatically using [dudupys/github-readme-terminal](https://github.com/dudupys/github-readme-terminal) on Sun Mar 01 09:00:45 PM -03 2026</i></sub>
 
 <!-- <details>
 <summary>More details</summary>
