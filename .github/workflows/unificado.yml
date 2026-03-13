@@ -2,7 +2,7 @@ name: Atualização Unificada
 
 on:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '0 0,12 * * *'
   workflow_dispatch:
 
 permissions:
@@ -11,6 +11,7 @@ permissions:
 jobs:
   update-all:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout do código
         uses: actions/checkout@v4
@@ -24,7 +25,8 @@ jobs:
 
       - name: Instalar dependências
         run: |
-          sudo apt update && sudo apt install -y ffmpeg
+          sudo apt update
+          sudo apt install -y ffmpeg
           python -m pip install --upgrade pip
           pip install pillow requests
           pip install git+https://github.com/x0rzavi/github-readme-terminal.git@main
@@ -45,7 +47,7 @@ jobs:
           git config --global user.name "dudupys"
           git config --global user.email "eduardo.vinicios.xt1@gmail.com"
           git add README.md output.gif
-          git commit -m "Atualização automática unificada em $(date) [skip ci]" || echo "Nada para commitar"
+          git commit -m "Atualização automática em $(date) [skip ci]" || echo "Nada para commitar"
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GIF_GENERATION_TOKEN }}
