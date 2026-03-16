@@ -33,14 +33,14 @@ $ echo "About me"
 
 ```bash
 $ echo "Daily Reflection"
-The future is already here, it's just not evenly distributed.
+Information is not knowledge.
 
-— William Gibson
+— Albert Einstein
 ```
 
 ---
 
-<sub><i>Generated automatically using [dudupys/github-readme-terminal](https://github.com/dudupys/github-readme-terminal) on Sun Mar 15 09:23:11 AM -03 2026</i></sub>
+<sub><i>Generated automatically using [dudupys/github-readme-terminal](https://github.com/dudupys/github-readme-terminal) on Sun Mar 15 10:05:18 PM -03 2026</i></sub>
 
 <!-- <details>
 <summary>More details</summary>
