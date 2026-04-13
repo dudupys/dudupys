@@ -33,14 +33,14 @@ $ echo "About me"
 
 ```bash
 $ echo "Daily Reflection"
-The question of whether computers can think is like the question of whether submarines can swim.
+In computer science, we don't understand software in the same way we understand hardware.
 
-— Edsger W. Dijkstra
+— Donald Knuth
 ```
 
 ---
 
-<sub><i>Generated automatically using [dudupys/github-readme-terminal](https://github.com/dudupys/github-readme-terminal) on Sun Apr 12 09:30:38 AM -03 2026</i></sub>
+<sub><i>Generated automatically using [dudupys/github-readme-terminal](https://github.com/dudupys/github-readme-terminal) on Sun Apr 12 10:13:57 PM -03 2026</i></sub>
 
 <!-- <details>
 <summary>More details</summary>
