@@ -33,14 +33,14 @@ $ echo "About me"
 
 ```bash
 $ echo "Daily Reflection"
-Technology is anything that wasn't around when you were born.
+The point about AI is that it forces us to think about what it means to be human.
 
-— Alan Kay
+— Marvin Minsky
 ```
 
 ---
 
-<sub><i>Generated automatically using [dudupys/github-readme-terminal](https://github.com/dudupys/github-readme-terminal) on Sun May 31 10:04:22 AM -03 2026</i></sub>
+<sub><i>Generated automatically using [dudupys/github-readme-terminal](https://github.com/dudupys/github-readme-terminal) on Sun May 31 11:06:36 PM -03 2026</i></sub>
 
 <!-- <details>
 <summary>More details</summary>
