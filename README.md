@@ -33,14 +33,14 @@ $ echo "About me"
 
 ```bash
 $ echo "Daily Reflection"
-If debugging is the process of removing bugs, then programming must be the process of putting them in.
+Show me your code and conceal your data structures, and I shall continue to be mystified. Show me your data structures, and I won't need your code.
 
-— Edsger W. Dijkstra
+— David L. Parnas
 ```
 
 ---
 
-<sub><i>Generated automatically using [dudupys/github-readme-terminal](https://github.com/dudupys/github-readme-terminal) on Tue Jul 07 10:57:52 AM -03 2026</i></sub>
+<sub><i>Generated automatically using [dudupys/github-readme-terminal](https://github.com/dudupys/github-readme-terminal) on Tue Jul 07 10:15:20 PM -03 2026</i></sub>
 
 <!-- <details>
 <summary>More details</summary>
