@@ -33,14 +33,14 @@ $ echo "About me"
 
 ```bash
 $ echo "Daily Reflection"
-Show me your code and conceal your data structures, and I shall continue to be mystified. Show me your data structures, and I won't need your code.
+The question of whether computers can think is like the question of whether submarines can swim.
 
-— David L. Parnas
+— Edsger W. Dijkstra
 ```
 
 ---
 
-<sub><i>Generated automatically using [dudupys/github-readme-terminal](https://github.com/dudupys/github-readme-terminal) on Fri Aug 21 09:18:50 AM -03 2026</i></sub>
+<sub><i>Generated automatically using [dudupys/github-readme-terminal](https://github.com/dudupys/github-readme-terminal) on Fri Aug 21 09:25:24 PM -03 2026</i></sub>
 
 <!-- <details>
 <summary>More details</summary>
