@@ -33,14 +33,14 @@ $ echo "About me"
 
 ```bash
 $ echo "Daily Reflection"
-In computer science, we don't understand software in the same way we understand hardware.
+Software is eating the world.
 
-— Donald Knuth
+— Marc Andreessen
 ```
 
 ---
 
-<sub><i>Generated automatically using [dudupys/github-readme-terminal](https://github.com/dudupys/github-readme-terminal) on Sun Aug 23 09:12:08 AM -03 2026</i></sub>
+<sub><i>Generated automatically using [dudupys/github-readme-terminal](https://github.com/dudupys/github-readme-terminal) on Sun Aug 23 09:26:48 PM -03 2026</i></sub>
 
 <!-- <details>
 <summary>More details</summary>
