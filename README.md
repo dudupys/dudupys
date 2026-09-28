@@ -33,14 +33,14 @@ $ echo "About me"
 
 ```bash
 $ echo "Daily Reflection"
-Code is like humor. When you have to explain it, it's not good.
+Software complexity is an enemy that has defeated most programmers.
 
-— Cory House
+— Michele Lanza
 ```
 
 ---
 
-<sub><i>Generated automatically using [dudupys/github-readme-terminal](https://github.com/dudupys/github-readme-terminal) on Sun Sep 27 12:50:52 PM -03 2026</i></sub>
+<sub><i>Generated automatically using [dudupys/github-readme-terminal](https://github.com/dudupys/github-readme-terminal) on Sun Sep 27 11:02:55 PM -03 2026</i></sub>
 
 <!-- <details>
 <summary>More details</summary>
