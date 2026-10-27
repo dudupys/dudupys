@@ -33,14 +33,14 @@ $ echo "About me"
 
 ```bash
 $ echo "Daily Reflection"
-Every problem solved by technology creates ten new problems.
+We are living in the information age, but we are dying of wisdom starvation.
 
-— Unknown
+— Naveen Jain
 ```
 
 ---
 
-<sub><i>Generated automatically using [dudupys/github-readme-terminal](https://github.com/dudupys/github-readme-terminal) on Mon Oct 26 02:40:59 PM -03 2026</i></sub>
+<sub><i>Generated automatically using [dudupys/github-readme-terminal](https://github.com/dudupys/github-readme-terminal) on Mon Oct 26 11:49:15 PM -03 2026</i></sub>
 
 <!-- <details>
 <summary>More details</summary>
